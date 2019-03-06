@@ -11,13 +11,13 @@ sh "ls -l"
 
 stage('Build docker image'){
 
-sh "docker build -t docker_test:latest ."
+sh "docker build -t iot_test:latest ."
 }
 
 stage('Docker login to hub and push the image'){
 sh "docker login -u 'igalgallo' -p 'tx@Molsal75' "
-sh "docker tag docker_test:latest igalgallo/docker_test:latest"
-sh "docker push igalgallo/docker_test:latest"
+sh "docker tag iot_test:latest igalgallo/iot_test:latest"
+sh "docker push igalgallo/iot_test:latest"
 }
 
 stage('Apply changes to the environment') {
